@@ -1,0 +1,36 @@
+---
+import Button from "../button.astro";
+---
+
+<section
+  class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-12 px-6 lg:px-16"
+  data-aos="fade-up"
+>
+  <div class="w-full lg:w-1/2 hidden lg:flex justify-center mb-6 lg:mb-0">
+    <img
+      src="images/team.webp"
+      alt="Equipo Anabel Santana Centro de psicología"
+      class="rounded-lg shadow-lg max-w-full"
+    />
+  </div>
+  <div class="lg:w-2/5 text-center lg:text-right">
+    <h2 class="text-4xl font-bold font-lora text-corporate mb-4">Mi Equipo</h2>
+    <div class="w-full md:w-2/3 px-4 lg:hidden flex mx-auto justify-center mb-4">
+        <img
+            src="images/team.webp"
+            alt="Equipo Anabel Santana Centro de psicología"
+            class="rounded-lg shadow-lg max-w-full"
+        />
+    </div>
+    <h3 class="text-2xl md:text-3xl font-semibold font-lora text-secondary mb-6">
+      ¿Quiénes forman mi equipo?
+    </h3>
+    <p class="text-gray-600 mb-6 text-base md:text-lg font-merriweather">
+      En nuestro centro de psicología, cada profesional trabaja de forma
+      individual y personalizada con sus pacientes. Nuestro equipo está formado
+      por especialistas en diferentes áreas, garantizando una atención adaptada
+      a las necesidades únicas de cada persona que confía en nosotros.
+    </p>
+    <Button href="/equipo" title="Conoce a mi equipo" />
+  </div>
+</section>
