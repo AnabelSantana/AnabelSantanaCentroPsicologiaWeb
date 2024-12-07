@@ -4,14 +4,24 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				playFair: [ "Playfair", 'serif'],
+				playFair: ["Playfair", 'serif'],
 				merriweather: ['Merriweather', 'serif'],
 				lora: ['Lora', 'serif']
 			},
 			colors: {
 				background: '#F2F2F2',
-				corporate: '#0D7061'
-			}
+				corporate: '#0D7061',
+				secondary: '#8fc1b5'
+			},
+			keyframes: {
+				fadeIn: {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
+				},
+			},
+			animation: {
+				fadeIn: 'fadeIn 2s ease-out',
+			},
 		},
 	},
 	plugins: [
