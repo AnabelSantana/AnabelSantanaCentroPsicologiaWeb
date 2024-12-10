@@ -11,7 +11,8 @@ export default {
 			colors: {
 				background: '#F2F2F2',
 				corporate: '#0D7061',
-				secondary: '#8fc1b5'
+				secondary: '#8fc1b5',
+				terciary: '#C0DFD7'
 			},
 			keyframes: {
 				fadeIn: {
