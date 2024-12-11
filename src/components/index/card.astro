@@ -1,0 +1,51 @@
+---
+import ClockIcon from "../../assets/icons/clockIcon.astro";
+import CommentsIcon from "../../assets/icons/commentsIcon.astro";
+import UsersIcon from "../../assets/icons/usersIcon.astro";
+import Button from "../button.astro";
+
+const { photo, altPhoto, title, description, textButton, isFree } = Astro.props;
+---
+
+<div class="max-w-sm bg-white rounded-lg shadow-xl">
+    <img class="rounded-t-lg" src={photo} alt={altPhoto} />
+    <div class="p-5">
+        <h5
+            class={`text-6xl font-lora font-semibold tracking-tight text-gray-700 text-center ${
+                isFree ? "mb-10" : "mb-2"
+            }`}
+        >
+            {title}{!isFree && <span class="text-2xl font-light">€</span>}
+        </h5>
+        <p class="mb-4 text-gray-700 font-lora text-xl">{description}</p>
+        {
+            !isFree && (
+                <div class="flex flex-col gap-2 mb-4">
+                    <div class="flex items-center justify-center gap-2 text-gray-700">
+                        <div class="text-corporate size-6">
+                            <ClockIcon />
+                        </div>
+                        <span class="text-base md:text-lg font-lora">60 minutos</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 text-gray-700">
+                        <div class="text-corporate size-6">
+                            <UsersIcon />
+                        </div>
+                        <span class="text-base md:text-lg font-lora">Infantil, juvenil y adultos</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 text-gray-700">
+                        <div class="text-corporate size-6">
+                            <CommentsIcon />
+                        </div>
+                        <span class="text-base md:text-lg font-lora">Presencial u online</span>
+                    </div>
+                </div>
+            )
+        }
+        <div class="flex justify-center">
+            <Button href="/servicios" title={textButton} />
+        </div>
+        
+        
+    </div>
+</div>

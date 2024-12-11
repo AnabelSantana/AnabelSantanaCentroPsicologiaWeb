@@ -1,0 +1,50 @@
+---
+import Card from "./card.astro";
+
+const cards = [
+  {
+    photo: "/images/charts.webp",
+    altPhoto: "Consulta Gratis",
+    title: "Gratis",
+    description: "Consultar mi caso o aclarar dudas",
+    textButton: "Contacto",
+    isFree: true,
+  },
+  {
+    photo: "/images/chair.webp",
+    altPhoto: "Proceso Terapéutico",
+    title: "60",
+    description: "Comenzar mi proceso terapéutico",
+    textButton: "Sesión individual",
+    isFree: false,
+  },
+];
+---
+
+<section class="max-w-7xl mx-auto py-12 px-6 lg:px-16" data-aos="fade-down">
+  <div class="container mx-auto text-center">
+    <h2
+      class="text-3xl lg:text-4xl font-semibold font-merriweather text-corporate mb-8 md:mb-12"
+    >
+      ¿Qué necesitas?
+    </h2>
+  </div>
+  <div class="container mx-auto flex flex-wrap justify-center gap-12">
+    {
+      cards.map((card, index) => (
+        <div class="flex items-center justify-center">
+          <Card
+            key={index}
+            photo={card.photo}
+            altPhoto={card.altPhoto}
+            title={card.title}
+            description={card.description}
+            isFree={card.isFree}
+            textButton={card.textButton}
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
+
