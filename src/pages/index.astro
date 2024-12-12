@@ -1,5 +1,6 @@
 ---
 import AboutMe from "../components/index/aboutMe.astro";
+import Center from "../components/index/center.astro";
 import HeroBanner from "../components/index/heroBanner.astro";
 import HowCanIHelpYou from "../components/index/howCanIHelpYou.astro";
 import Parallax from "../components/index/parallax.astro";
@@ -17,8 +18,12 @@ import Layout from "../layouts/Layout.astro";
 		<Separator/>
 	</div>
 	<AboutMe/>
-	<Parallax/>
+	<div class="flex items-center justify-center mx-auto" data-aos="fade-down">
+		<Separator/>
+	</div>
 	<Team/>
+	<Parallax/>
+	<Center/>
 	<div class="bg-terciary">
 		<Services/>
 	</div>

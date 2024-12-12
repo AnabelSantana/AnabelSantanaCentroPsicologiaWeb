@@ -1,0 +1,47 @@
+---
+import Button from "../button.astro";
+import VerticalCarousel from "../verticalCarousel.astro";
+import HorizontalCarousel from "../horizontalCarousel.astro";
+---
+
+<section
+    class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-12 px-6 md:px-12 lg:px-16"
+    data-aos="fade-down"
+>
+    <div
+        class="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 mb-6 lg:mb-0"
+    >
+        <h2 class="text-4xl font-bold font-lora text-corporate">
+            Nuestro Centro
+        </h2>
+        <div
+            class="w-full md:w-2/3 px-4 lg:hidden flex mx-auto justify-center mb-4"
+        >
+            <HorizontalCarousel />
+        </div>
+        <h3 class="text-2xl md:text-3xl font-semibold font-lora text-secondary">
+            ¿Qué hace especial a nuestro centro?
+        </h3>
+        <p class="text-gray-600 text-base md:text-lg font-merriweather">
+            En nuestro centro de psicología, nos dedicamos a crear un entorno en
+            el que te sientas cómodo y seguro para trabajar en tu bienestar
+            emocional. Nuestro enfoque integrador combina técnicas tradicionales
+            con metodologías innovadoras, adaptadas a las necesidades
+            individuales de cada persona. Creemos firmemente en que cada
+            individuo es único, por lo que nuestro equipo trabaja para
+            proporcionarte un trato cercano y personalizado en cada sesión.
+        </p>
+        <p class="text-gray-600 text-base md:text-lg font-merriweather">
+            Nos especializamos en la atención a niños, adolescentes y adultos,
+            abordando una amplia variedad de áreas como el manejo del estrés, la
+            gestión emocional, las relaciones interpersonales, y la superación
+            de situaciones de crisis. Además, nos esforzamos por ofrecerte
+            herramientas prácticas y efectivas que puedas aplicar en tu día a
+            día para alcanzar tus objetivos y mejorar tu calidad de vida.
+        </p>
+        <Button href="/centro" title="Conoce nuestro centro" />
+    </div>
+    <div class="lg:w-1/2 hidden lg:flex">
+        <VerticalCarousel />
+    </div>
+</section>
