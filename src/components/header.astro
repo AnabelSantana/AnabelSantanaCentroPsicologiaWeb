@@ -4,106 +4,105 @@ import HamburguerIcon from "../assets/icons/hamburguerIcon.astro";
 
 const currentPath = Astro.url.pathname;
 ---
-    <nav class="w-full z-30 bg-white shadow fixed">
-        <div
-            class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4"
+
+<nav class="w-full z-30 bg-white shadow fixed">
+    <div
+        class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4"
+    >
+        <!-- Logo -->
+        <a href="/" class="flex items-center">
+            <img
+                src="/images/logo.png"
+                alt="Logo Anabel Santana Centro Psicología"
+                class="inline w-48"
+            />
+        </a>
+
+        <!-- Botón Toggle para móviles -->
+        <button
+            id="navbar-toggle"
+            data-collapse-toggle="navbar-language"
+            type="button"
+            class="inline-flex items-center lg:hidden p-2 w-10 h-10 justify-center text-sm text-white bg-corporate focus:outline-none focus:ring-4 focus:ring-green-900 rounded-lg"
+            aria-controls="navbar-language"
+            aria-expanded="false"
         >
-            <!-- Logo -->
-            <a href="/" class="flex items-center">
-                <img
-                    src="/images/logo.png"
-                    alt="Logo Anabel Santana Centro Psicología"
-                    class="inline w-48"
-                />
-            </a>
+            <span class="sr-only">Toggle navigation</span>
+            <HamburguerIcon />
+            <CloseIcon />
+        </button>
 
-            <!-- Botón Toggle para móviles -->
-            <button
-                id="navbar-toggle"
-                data-collapse-toggle="navbar-language"
-                type="button"
-                class="inline-flex  items-center lg:hidden p-2 w-10 h-10 justify-center text-sm text-white bg-corporate focus:outline-none focus:ring-4 focus:ring-green-900 rounded-lg"
-                aria-controls="navbar-language"
-                aria-expanded="false"
+        <!-- Menú de Navegación -->
+        <div
+            class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+            id="navbar-language"
+        >
+            <ul
+                class="flex flex-col lg:flex-row items-center lg:space-x-6 space-y-2 lg:space-y-0 text-lg font-medium justify-end font-merriweather"
             >
-                <span class="sr-only">Toggle navigation</span>
-                <HamburguerIcon/>
-                <CloseIcon/>
-            </button>
-
-            <!-- Menú de Navegación -->
-            <div
-                class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
-                id="navbar-language"
-            >
-                <ul
-                    class="flex flex-col lg:flex-row items-center lg:space-x-6 space-y-2 lg:space-y-0 text-lg font-medium justify-end font-merriweather"
-                >
-                    <li>
-                        <a
-                            href="/"
-                            class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
-                                currentPath === "/"
-                                    ? "text-corporate font-bold underline"
-                                    : ""
-                            }`}>Inicio</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="sobre-mi"
-                            class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
-                                currentPath.includes("sobre-mi")
-                                    ? "text-corporate font-bold underline"
-                                    : ""
-                            }`}>Sobre mi</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="equipo"
-                            class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
-                                currentPath.includes("equipo")
-                                    ? "text-corporate font-bold underline"
-                                    : ""
-                            }`}>Equipo</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="servicios"
-                            class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
-                                currentPath.includes("servicios")
-                                    ? "text-corporate font-bold underline"
-                                    : ""
-                            }`}>Servicios</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="centro"
-                            class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
-                                currentPath.includes("centro")
-                                    ? "text-corporate font-bold underline"
-                                    : ""
-                            }`}>Centro</a
-                        >
-                    </li> 
-                     <li>
-                        <button
-                            id="navAction"
-                            class="bg-corporate text-white font-bold rounded-full py-2 px-5 shadow transform transition hover:scale-105 duration-300 ease-in-out"
-                        >
-                            Pide cita
-                        </button>
-                    </li>
-                </ul>
-            </div>
-
-            
-            
+                <li>
+                    <a
+                        href="/"
+                        class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
+                            currentPath === "/"
+                                ? "text-corporate font-bold underline"
+                                : ""
+                        }`}>Inicio</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="sobre-mi"
+                        class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
+                            currentPath.includes("sobre-mi")
+                                ? "text-corporate font-bold underline"
+                                : ""
+                        }`}>Sobre mi</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="equipo"
+                        class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
+                            currentPath.includes("equipo")
+                                ? "text-corporate font-bold underline"
+                                : ""
+                        }`}>Equipo</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="servicios"
+                        class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
+                            currentPath.includes("servicios")
+                                ? "text-corporate font-bold underline"
+                                : ""
+                        }`}>Servicios</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="centro"
+                        class={`hover:text-corporate hover:font-bold transition-all duration-200 ${
+                            currentPath.includes("centro")
+                                ? "text-corporate font-bold underline"
+                                : ""
+                        }`}>Centro</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://wa.me/+34664206762"
+                        target="_blank"
+                        class="inline-block bg-corporate text-white font-bold rounded-full py-2 px-5 shadow-lg hover:shadow-secondary transform transition hover:scale-105 duration-300 ease-in-out"
+                    >
+                        Pide cita
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 <script>
     var navbarToggleBtn = document.getElementById("navbar-toggle");
