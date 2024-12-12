@@ -1,6 +1,20 @@
 ---
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";	
+
+interface Props {
+	title: string;
+	description: string;
+	withheader?: boolean;
+	withfooter?: boolean;
+}
+
+const {
+	title,
+	description,
+	withheader = true,
+	withfooter = true,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -8,6 +22,7 @@ import Header from "../components/header.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name='description' content={description} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,12 +36,12 @@ import Header from "../components/header.astro";
 			rel="stylesheet"
 		/>
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
 	<body class="bg-background">
-		<Header />
+		{withheader && <Header />}
 		<slot />
-		<Footer/>
+		{withfooter && <Footer />}
 		<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js" defer
 		></script>
 		<script>

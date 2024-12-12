@@ -13,26 +13,29 @@ import WhatsApp from "../components/whatsapp.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<HeroBanner/>
-	<HowCanIHelpYou/>
+<Layout
+	title="Inicio | Anabel Santana - Centro de Psicología"
+	description="Aplicamos un modelo integrador, utilizando distintas técnicas y corrientes psicológicas para adaptarnos a la persona, y buscando que éstas puedan establecer una relación más saludable con el mundo que les rodea. Especialidad en apego y trauma."
+>
+	<HeroBanner />
+	<HowCanIHelpYou />
 	<div class="flex items-center justify-center mx-auto" data-aos="fade-down">
-		<Separator/>
+		<Separator />
 	</div>
-	<AboutMe/>
+	<AboutMe />
 	<div class="flex items-center justify-center mx-auto" data-aos="fade-down">
-		<Separator/>
+		<Separator />
 	</div>
-	<Team/>
-	<Parallax/>
-	<Center/>
+	<Team />
+	<Parallax />
+	<Center />
 	<div class="bg-terciary">
-		<Services/>
+		<Services />
 	</div>
-	<YouNeed/>
+	<YouNeed />
 	<div class="flex items-center justify-center mx-auto" data-aos="fade-down">
-		<Separator/>
+		<Separator />
 	</div>
-	<Review/>
+	<Review />
 	<WhatsApp />
 </Layout>
