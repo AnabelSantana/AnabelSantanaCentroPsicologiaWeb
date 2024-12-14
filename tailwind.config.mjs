@@ -38,7 +38,7 @@ export default {
 					'text-shadow': '3px 3px 6px rgba(0, 0, 0, 0.5)',
 				},
 				'.text-shadow-lg': {
-					'text-shadow': '4px 4px 8px rgba(51, 250, 245, 0.9)',
+					'text-shadow': '4px 4px 8px rgba(0, 0, 0, 0.9)',
 				},
 			});
 		}
