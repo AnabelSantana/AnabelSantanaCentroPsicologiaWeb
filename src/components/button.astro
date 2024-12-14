@@ -1,10 +1,11 @@
 ---
-const { href, title } = Astro.props;
+const { href, title, newTab = false } = Astro.props;
 ---
 
 <a
     href={href}
-    target="_blank"
+    target={newTab ? "_blank" : "_self"} 
+    rel={newTab ? "noopener noreferrer" : undefined}
     class="inline-block bg-corporate border-green-700 text-white rounded-md hover:scale-105 duration-300 ease-in-out select-none focus:outline-none
         focus:shadow-outline shadow-lg hover:shadow-secondary text-base md:text-lg xl:text-xl font-medium p-2.5 md:px-5 font-merriweather"
 >
