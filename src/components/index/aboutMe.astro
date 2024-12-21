@@ -5,11 +5,15 @@ import Button from "../button.astro";
 <section
     class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-12 px-6 md:px-12 lg:px-16"
 >
-    <div class="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 mb-6 lg:mb-0">
+    <div
+        class="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 md:gap-2 mb-6 lg:mb-0"
+    >
         <h2 class="text-4xl font-bold font-lora text-corporate mb-4">
             Conóceme
         </h2>
-        <div class="w-full md:w-2/3 px-4 lg:hidden flex mx-auto justify-center mb-4">
+        <div
+            class="w-full md:w-2/3 px-4 lg:hidden flex mx-auto justify-center mb-4"
+        >
             <img
                 src="images/anabelndex.webp"
                 alt="Anabel Santana"
@@ -17,25 +21,30 @@ import Button from "../button.astro";
             />
         </div>
         <h3
-            class="text-2xl md:text-3xl font-semibold font-lora text-secondary mb-6"
+            class="text-2xl md:text-3xl font-semibold font-lora text-secondary mb-4"
         >
             ¿Por qué puedo ayudarte?
         </h3>
-        <p class="text-gray-600 mb-6 text-base md:text-lg font-merriweather">
-            Soy <span class="font-bold">Licenciada en Psicología</span> con más de
-            10 años de experiencia, especializada en
-            <span class="font-semibold"
-                >apego, trauma, intervención en crisis</span
-            > y atención a personas en situaciones difíciles. Trabajo con <span
-                class="font-bold">niños, adolescentes y adultos</span
-            >, utilizando un enfoque integrador y técnicas adaptadas a cada
-            persona.
+        <p class="text-gray-600 mb-2 text-base md:text-lg font-merriweather">
+            Soy <span class="font-bold">Licenciada en Psicología</span>
+            por la Universidad San Pablo-CEU en Madrid, siguiendo un itinerario vinculado
+            al área de psicología clínica Complementé mi formación con un Máster
+            en Psicología General Sanitaria, un Máster en Adicciones, y postgrado en intervención en Trauma y Apego, crisis, protección
+            a la infancia y adolescencia, así como menores infractores.
+        </p>
+        <p class="text-gray-600 mb-4 text-base md:text-lg font-merriweather">
+            Con más de 10 años de experiencia profesional, he trabajado en
+            ámbitos como protección a la infancia, centros de menores,
+            instituciones penitenciarias y atención a personas con enfermedad
+            mental grave. Ofrezco servicios de psicología para niños,
+            adolescentes y adultos, adaptando las técnicas y enfoques a las
+            necesidades de cada persona.
         </p>
         <Button href="/sobre-mi" title="Sobre mí" />
     </div>
     <div class="w-full lg:w-2/5 hidden lg:flex justify-center mb-6 lg:mb-0">
         <img
-            src="images/anabelndex.webp"
+            src="images/anabelIndexVertical.webp"
             alt="Anabel Santana"
             class="rounded-lg shadow-lg max-w-full"
         />
