@@ -1,11 +1,147 @@
 ---
-import Construction from "../components/construction.astro";
+import BreadCrumb from "../components/breadCrumb.astro";
+import Button from "../components/button.astro";
+import HeroSection from "../components/heroSection.astro";
 import Layout from "../layouts/Layout.astro";
+import type { BreadcrumbItem } from "../model/types";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+	{ title: "Inicio", link: "/" },
+	{ title: "Servicios" },
+];
+
+const servicios = [
+	{
+		titulo: "Terapia Presencial",
+		descripcion:
+			"Sesiones en nuestro centro, en un espacio seguro y acogedor para trabajar tus objetivos personales.",
+		imagen: "/images/services/presentialTherapy.webp",
+		link: "https://wa.me/+34664206762?text=Hola!%20Estaría%20interesado%20en%20la%20terapia%20presencial.",
+	},
+	{
+		titulo: "Terapia Online",
+		descripcion:
+			"Apoyo psicológico desde cualquier lugar con la comodidad de videollamadas seguras.",
+		imagen: "/images/services/onlineTherapy.webp",
+		link: "https://wa.me/+34664206762?text=Hola!%20Estaría%20interesado%20en%20la%20terapia%20online.",
+	},
+	{
+		titulo: "Infantil",
+		descripcion:
+			"Técnicas adaptadas para ayudar a niños a gestionar emociones y enfrentar desafíos.",
+		imagen: "/images/services/infantil.webp",
+		link: "https://wa.me/+34664206762?text=Hola!%20Estaría%20interesado%20en%20la%20terapia%20infantil.",
+	},
+	{
+		titulo: "Juvenil",
+		descripcion:
+			"Orientación para adolescentes en la gestión de emociones y toma de decisiones saludables.",
+		imagen: "/images/services/juvenil.webp",
+		link: "https://wa.me/+34664206762?text=Hola!%20Estaría%20interesado%20en%20la%20terapia%20juvenil.",
+	},
+	{
+		titulo: "Adultos",
+		descripcion:
+			"Apoyo para gestionar estrés, ansiedad y otros retos emocionales en la vida adulta.",
+		imagen: "/images/services/adult.webp",
+		link: "https://wa.me/+34664206762?text=Hola!%20Estaría%20interesado%20en%20la%20terapia%20para%20adultos.",
+	},
+	{
+		titulo: "Pareja",
+		descripcion:
+			"Mejora la comunicación y fortalece la relación superando conflictos juntos.",
+		imagen: "/images/services/couple.webp",
+		link: "https://wa.me/+34664206762?text=Hola!%20Estaría%20interesado%20en%20la%20terapia%20de%20pareja.",
+	},
+	{
+		titulo: "Familiar",
+		descripcion:
+			"Sesiones para mejorar dinámicas familiares y fortalecer vínculos entre los miembros.",
+		imagen: "/images/services/family.webp",
+		link: "https://wa.me/+34664206762?text=Hola!%20Estaría%20interesado%20en%20la%20terapia%20familiar.",
+	},
+];
 ---
 
 <Layout
 	title="Servicios | Anabel Santana - Centro de Psicología"
 	description="Descubre los servicios psicológicos que ofrecemos, desde terapia individual y de pareja hasta atención a trauma y apego. Nos adaptamos a tus necesidades para ayudarte a vivir mejor."
 >
-	<Construction/>
+	<HeroSection image="/images/services/services.webp" title="Servicios" />
+	<BreadCrumb items={breadcrumbItems} />
+	<section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-6 lg:my-8">
+		<div class="py-4">
+			<h2
+				class="text-2xl md:text-4xl font-semibold text-secondary mb-8 font-lora"
+			>
+				¿En qué podemos ayudarte?
+			</h2>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-2 md:mb-4 font-light"
+			>
+				Estamos especializados en población <span class="font-bold"
+					>infanto-juvenil y adultos</span
+				>, contando con una amplia formación y experiencia en distintas
+				áreas.
+			</p>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-2 md:mb-4 font-light"
+			>
+				Nuestra orientación se basa en una <span class="font-bold"
+					>perspectiva integradora</span
+				>, que combina elementos de diversas corrientes psicológicas con
+				respaldo científico, como la <span class="font-bold"
+					>Terapia Cognitivo Conductual, Sistémica, Relacional</span
+				> y los <span class="font-bold"
+					>Modelos de la teoría del apego y trauma</span
+				>, entre otras.
+			</p>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-2 md:mb-4 font-light"
+			>
+				Para cada persona, consideramos el enfoque que mejor se adapta a
+				sus
+				<span class="font-bold">necesidades únicas</span>, ofreciendo
+				herramientas y estrategias personalizadas que faciliten alcanzar
+				un <span class="font-bold">mayor bienestar emocional.</span>
+			</p>
+		</div>
+
+		{
+			servicios.map((servicio, index) => (
+				<section
+					class={`bg-white flex flex-col md:flex-row items-center mb-8 rounded-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-lg ${
+						index % 2 === 0 ? "md:flex-row-reverse" : ""
+					}`}
+				>
+					<div class="w-full md:w-1/2 mb-8 md:mb-0">
+						<img
+							src={servicio.imagen}
+							alt={servicio.titulo}
+							class={`w-full h-60 md:h-80 object-cover ${
+								index % 2 === 0
+									? "rounded-t-lg md:rounded-tl-none md:rounded-r-lg"
+									: "rounded-t-lg md:rounded-tr-none md:rounded-l-lg"
+							}`}
+						/>
+					</div>
+					<div class="text-center md:text-left px-4 pb-4 md:px-10 md:py-2 md:w-1/2">
+						<h2 class="text-3xl font-semibold mb-4 text-corporate font-merriweather">
+							{servicio.titulo}
+						</h2>
+						<p class="text-lg text-gray-700 leading-relaxed font-lora">
+							{servicio.descripcion}
+						</p>
+						<div class="inline-block mt-6">
+							<Button
+								href={servicio.link}
+								title="Pide cita"
+								newTab="true"
+							/>
+						</div>
+					</div>
+				</section>
+			))
+		}
+	</section>
 </Layout>
