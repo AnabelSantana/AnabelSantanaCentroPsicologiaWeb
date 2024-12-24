@@ -14,7 +14,10 @@ export default {
 				background: '#F2F2F2',
 				corporate: '#0D7061',
 				secondary: '#8fc1b5',
-				terciary: '#C0DFD7'
+				terciary: '#C0DFD7',
+				beige: '#FFF9F2', 
+                targetBorder: '#B35C2E',
+                targetText: '#4F4F4F'
 			},
 			keyframes: {
 				fadeIn: {
