@@ -21,3 +21,38 @@ jobs:
                 context: ./
                 push: true
                 tags: anabelweb/anabelsantana.web:latest
+    deploy:
+        runs-on: ubuntu-latest
+        name: continuos_deployment
+        needs: [docker_build]
+        steps:
+            - name: remove_containers
+              uses: appleboy/ssh-action@master
+              with: 
+                host:  ${{ secrets.HOST_IP }}
+                username:  ${{ secrets.HOST_USERNAME }}
+                password:  ${{ secrets.HOST_PASSWORD }}
+                port: 22
+                script: |
+                    docker stop $(docker ps -q);docker rm $(docker ps -a -q);
+            - name: remove_images
+              uses: appleboy/ssh-action@master
+              with: 
+                host:  ${{ secrets.HOST_IP }}
+                username:  ${{ secrets.HOST_USERNAME }}
+                password:  ${{ secrets.HOST_PASSWORD }}
+                port: 22
+                script: |
+                    docker rmi $(docker images -q);
+            - name: deploy
+              uses: appleboy/ssh-action@master
+              with: 
+                host:  ${{ secrets.HOST_IP }}
+                username:  ${{ secrets.HOST_USERNAME }}
+                password:  ${{ secrets.HOST_PASSWORD }}
+                port: 22
+                script: |
+                    docker pull anabelweb/anabelsantana.web:latest;
+                    docker run -d \
+                    -p 8443:4321 \
+                    -t anabelweb/anabelsantana.web:latest;
