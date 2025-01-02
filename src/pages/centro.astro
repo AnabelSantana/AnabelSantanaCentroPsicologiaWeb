@@ -1,11 +1,136 @@
 ---
-import Construction from "../components/construction.astro";
+import BreadCrumb from "../components/breadCrumb.astro";
+import HeroSection from "../components/heroSection.astro";
+import Location from "../assets/icons/contact/locationIcon.astro";
 import Layout from "../layouts/Layout.astro";
+import type { BreadcrumbItem } from "../model/types";
+import Mail from "../assets/icons/contact/mailIcon.astro";
+import Phone from "../assets/icons/contact/phoneIcon.astro";
+import Watch from "../assets/icons/contact/watchIcon.astro";
+import PhotosCenter from "../components/photosCenter.astro";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+	{ title: "Inicio", link: "/" },
+	{ title: "Nuestro Centro" },
+];
 ---
 
 <Layout
 	title="Centro | Anabel Santana - Centro de Psicología"
 	description="Conoce nuestro centro de psicología, un espacio acogedor y seguro diseñado para tu bienestar. Aquí encontrarás el entorno ideal para iniciar tu proceso terapéutico con confianza."
 >
-	<Construction/>
+	<HeroSection image="/images/center/center.webp" title="Nuestro Centro" />
+	<BreadCrumb items={breadcrumbItems} />
+	<section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-6 lg:my-8">
+		<div class="py-4">
+			<h2
+				class="text-2xl md:text-4xl font-semibold text-secondary mb-8 font-lora"
+			>
+				Conoce Nuestro Centro de Psicología
+			</h2>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-2 md:mb-4 font-light"
+			>
+				Estamos especializados en población
+				<span class="font-bold">infanto-juvenil y adultos</span>,
+				contando con una <span class="font-bold">amplia formación</span>
+				y experiencia en
+				<span class="font-bold">distintas áreas</span>.
+			</p>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-2 md:mb-4 font-light"
+			>
+				Nuestra orientación se basa en una
+				<span class="font-bold">perspectiva integradora</span>, que
+				combina elementos de
+				<span class="font-bold">diversas corrientes psicológicas</span> con
+				<span class="font-bold">respaldo científico</span>, como la
+				<span class="font-bold"
+					>Terapia Cognitivo Conductual, Sistémica, Relacional</span
+				>
+				y los <span class="font-bold"
+					>Modelos de la teoría del apego y trauma</span
+				>, entre otras.
+			</p>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-2 md:mb-4 font-light"
+			>
+				Para cada persona, consideramos el enfoque que mejor se adapta a
+				sus
+				<span class="font-bold">necesidades únicas</span>, ofreciendo
+				<span class="font-bold"
+					>herramientas y estrategias personalizadas</span
+				>
+				que faciliten alcanzar un
+				<span class="font-bold">mayor bienestar emocional</span>.
+			</p>
+		</div>
+		<div class="py-4">
+			<h2
+				class="text-2xl md:text-4xl font-semibold text-secondary mb-8 font-lora"
+			>
+				Recorre Nuestro Espacio
+			</h2>
+			<PhotosCenter />
+		</div>
+		<div class="py-4">
+			<h2
+			  class="text-2xl md:text-4xl font-semibold text-secondary font-lora mb-4 md:mb-8"
+			>
+			  Contacto
+			</h2>
+			<div class="flex flex-col md:flex-row w-full gap-6 md:gap-12 items-stretch">
+			  <div class="md:w-1/2">
+				<div
+				  class="bg-white/50 backdrop-blur-md rounded-xl p-6 md:p-8 shadow-lg font-lora h-full"
+				>
+				  <div class="flex items-center mb-6 gap-2">
+					<div class="text-targetBorder size-8">
+					  <Location />
+					</div>
+					<p>
+					  C/ Secundino Delgado, 9, Local 3. <br>35200 Telde, Las Palmas
+					</p>
+				  </div>
+				  <div class="flex items-center mb-6 gap-2">
+					<div class="text-targetBorder size-8">
+					  <Watch />
+					</div>
+					<div>
+					  <p class="font-semibold text-corporate font-merriweather">
+						Horario de atención
+					  </p>
+					  <p>Lunes a Viernes: 9:00 - 21:00</p>
+					</div>
+				  </div>
+				  <div class="flex items-center mb-6 gap-2">
+					<div class="text-targetBorder size-8">
+					  <Phone />
+					</div>
+					<p>+34 664 20 67 62</p>
+				  </div>
+				  <div class="flex items-center gap-2">
+					<div class="text-targetBorder size-8">
+					  <Mail />
+					</div>
+					<p>santanacalcines@gmail.com</p>
+				  </div>
+				</div>
+			  </div>
+			  <div class="md:w-1/2">
+				<div class="w-full h-72 md:h-full flex items-stretch justify-center text-gray-600">
+				  <iframe
+					class="w-full h-full"
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3523.0616650716743!2d-15.423608423978406!3d27.992009712877817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4097a722e1e7e1%3A0x649071fb26a24e32!2sAnabel%20Santana.%20Psic%C3%B3loga%20en%20Telde.%20Psic%C3%B3loga%20Infanto-Juvenil.%20Psic%C3%B3loga%20Adultos.%20Intervenci%C3%B3n%20en%20trauma.%20Terapia%20Online!5e0!3m2!1ses!2ses!4v1735837543212!5m2!1ses!2ses"
+					style="border:0;"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+				  ></iframe>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+	</section>
 </Layout>
