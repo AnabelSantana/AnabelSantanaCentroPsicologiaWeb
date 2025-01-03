@@ -1,11 +1,149 @@
 ---
-import Construction from "../components/construction.astro";
+import BreadCrumb from "../components/breadCrumb.astro";
+import CardTeam from "../components/cardTeam.astro";
+import HeroSection from "../components/heroSection.astro";
 import Layout from "../layouts/Layout.astro";
+import type { BreadcrumbItem } from "../model/types";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+	{ title: "Inicio", link: "/" },
+	{ title: "Equipo" },
+];
+
+const cardsTeam = [
+	{
+		img: "images/team/cristina.webp",
+		title: "Cristina Cruz",
+		member: "M-40931",
+		badges: [
+			"Apego y trauma",
+			"Duelo",
+			"Terapia Cognitivo-Conductual",
+			"Psicología Perinatal",
+			"Ansiedad",
+			"Trastornos del Estado de Ánimo",
+		],
+	},
+	{
+		img: "images/team/siria.webp",
+		title: "Siria Shahabi",
+		member: "P-02972",
+		badges: [
+			"Apego y trauma",
+			"Ansiedad",
+			"Diversidad sexual y de género",
+			"Trastornos de personalidad",
+			"Regulación emocional",
+			"Depresión",
+		],
+	},
+	{
+		img: "images/team/lara.webp",
+		title: "Lara Martín",
+		member: "P-02494",
+		badges: [
+			"Terapia Cognitivo Conductual",
+			"Regulación emocional",
+			"Apego",
+			"Trastornos de personalidad",
+			"Trauma",
+			"Ansiedad",
+			"Estrés",
+		],
+	},
+];
 ---
 
 <Layout
 	title="Equipo | Anabel Santana - Centro de Psicología"
 	description="Conoce a nuestro equipo de psicólogos especializados en diferentes áreas como trauma, apego, ansiedad y más. Profesionales comprometidos con ayudarte a alcanzar tu bienestar emocional y psicológico."
 >
-	<Construction/>
+	<HeroSection image="images/team/team.webp" title="Equipo" />
+	<BreadCrumb items={breadcrumbItems} />
+	<section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-6 lg:my-8">
+		<div class="py-4">
+			<h2
+				class="text-2xl md:text-4xl font-semibold text-secondary mb-4 md:mb-8 font-lora"
+			>
+				Un equipo dedicado a tu bienestar emocional
+			</h2>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-2 md:mb-4 font-light"
+			>
+				En nuestro centro de psicología, contamos con un equipo de
+				<span class="font-bold"
+					>profesionales altamente cualificados</span
+				> y comprometidos con tu
+				<span class="font-bold">bienestar</span>. Cada uno de nosotros
+				aporta su propia
+				<span class="font-bold">experiencia</span> y <span
+					class="font-bold">especialización</span
+				>, ofreciéndote una atención
+				<span class="font-bold">integral y personalizada</span>.
+				Trabajamos en un entorno cercano y
+				<span class="font-bold">empático</span>, convencidos de que cada
+				persona es <span class="font-bold">única</span> y merece un acompañamiento
+				adaptado a sus necesidades.
+			</p>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-4 font-light"
+			>
+				Nuestro objetivo principal es ayudarte a alcanzar una
+				<span class="font-bold">vida plena y saludable</span> a nivel emocional.
+				Para ello, empleamos diferentes
+				<span class="font-bold">enfoques</span> y
+				<span class="font-bold"
+					>técnicas basadas en la evidencia científica</span
+				>. Desde la <span class="font-bold"
+					>terapia individual y de pareja</span
+				> hasta la
+				<span class="font-bold">intervención familiar</span> y el
+				<span class="font-bold">apoyo a la infancia y adolescencia</span
+				>, nuestro equipo está preparado para guiarte en cada etapa de
+				tu proceso.
+			</p>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-4 font-light"
+			>
+				Creemos en el poder de la <span class="font-bold"
+					>colaboración</span
+				> y la
+				<span class="font-bold">comunicación efectiva</span>. Por ello,
+				nos reunimos con frecuencia para analizar cada caso de manera
+				conjunta, compartir conocimientos y buscar las soluciones más
+				adecuadas para cada situación. Nuestra prioridad es ofrecerte un
+				<span class="font-bold"
+					>servicio cercano, profesional y de confianza</span
+				>, en un entorno donde te sientas cómodo para expresarte con
+				total libertad.
+			</p>
+			<p
+				class="text-gray-600 text-base md:text-lg lg:text-xl font-merriweather text-left mb-4 font-light"
+			>
+				Si estás buscando un lugar en el que trabajar tus preocupaciones
+				y mejorar tu
+				<span class="font-bold">salud mental</span>, nuestro equipo
+				estará encantado de acompañarte. ¡Te esperamos para dar juntos
+				el primer paso hacia <span class="font-bold">tu bienestar</span
+				>!
+			</p>
+		</div>
+		<h2
+			class="text-2xl md:text-4xl font-semibold text-secondary my-4 md:my-8 font-lora"
+		>
+			Conoce al equipo que te acompañará en cada paso
+		</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{
+				cardsTeam.map(({ img, title, member, badges }) => (
+					<CardTeam
+						img={img}
+						title={title}
+						member={member}
+						badges={badges}
+					/>
+				))
+			}
+		</div>
+	</section>
 </Layout>

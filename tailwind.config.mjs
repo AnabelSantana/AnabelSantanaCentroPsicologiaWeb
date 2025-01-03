@@ -27,7 +27,7 @@ export default {
 			},
 			animation: {
 				fadeIn: 'fadeIn 2s ease-out',
-			},
+			}
 		},
 	},
 	plugins: [
