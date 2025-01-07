@@ -1,0 +1,92 @@
+---
+const { formations = [], experiences = [] } = Astro.props;
+---
+
+<div
+    id="accordion-color"
+    data-accordion="collapse"
+    data-active-classes="bg-targetBorder text-white"
+>
+    <h2 id="accordion-color-heading-1">
+        <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-semibold text-xl bg-beige rtl:text-right text-targetText border-2 border-b-0 border-targetBorder rounded-t-xl focus:ring-2 focus:ring-amber-900 hover:bg-targetBorder hover:text-white font-merriweather"
+            data-accordion-target="#accordion-color-body-1"
+            aria-expanded="true"
+            aria-controls="accordion-color-body-1"
+        >
+            <span>Experiencia</span>
+            <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"></path>
+            </svg>
+        </button>
+    </h2>
+    <div
+        id="accordion-color-body-1"
+        class="hidden bg-beige"
+        aria-labelledby="accordion-color-heading-1"
+    >
+        <div class="p-5 border-2 border-b-0 border-targetBorder">
+            <ul class="list-disc pl-5 space-y-2 font-lora">
+                {
+                    experiences?.map((experience: string) => (
+                        <li>{experience}</li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+    <h2 id="accordion-color-heading-2">
+        <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-semibold text-xl bg-beige rtl:text-right text-targetText border-2 border-targetBorder focus:ring-2 focus:ring-amber-900 hover:bg-targetBorder hover:text-white font-merriweather gap-3"
+            data-accordion-target="#accordion-color-body-2"
+            aria-expanded="false"
+            aria-controls="accordion-color-body-2"
+        >
+            <span>Formación</span>
+            <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"></path>
+            </svg>
+        </button>
+    </h2>
+    <div
+        id="accordion-color-body-2"
+        class="hidden bg-beige"
+        aria-labelledby="accordion-color-heading-2"
+    >
+        <div class="p-5 border-2 border-targetBorder">
+            <ul class="list-disc pl-5 space-y-2 font-lora">
+                {
+                    formations?.map((formation: string) => (
+                        <li>{formation}</li>
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+</div>

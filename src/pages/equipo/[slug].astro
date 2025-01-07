@@ -1,0 +1,136 @@
+---
+// src/pages/equipo/[slug].astro
+
+import Layout from "../../layouts/Layout.astro";
+import { cardsTeam } from "../../data/teamData";
+import type { BreadcrumbItem } from "../../model/types";
+import BreadCrumb from "../../components/breadCrumb.astro";
+import Badge from "../../components/badge.astro";
+import AccordionTeam from "../../components/accordionTeam.astro";
+import BadgeGreen from "../../components/badgeGreen.astro";
+import Button from "../../components/button.astro";
+
+const { slug } = Astro.params;
+
+const persona = cardsTeam.find((p) => p.slug === slug);
+if (!persona) {
+    // Si no encontramos a nadie con ese slug, puedes hacer un throw
+    throw new Error(`No se encontró ningún profesional con el slug: ${slug}`);
+}
+
+const { img, title, member, badges, girl, specialties, formation, experience } =
+    persona;
+
+const breadcrumbItems: BreadcrumbItem[] = [
+    { title: "Inicio", link: "/" },
+    { title: "Equipo", link: "/equipo" },
+    { title: title },
+];
+---
+
+<Layout
+    title={`Equipo | ${title} - Centro de Psicología`}
+    description={`Conoce más sobre ${title}, su trayectoria y formación.`}
+>
+    <div class="pt-36">
+        <BreadCrumb items={breadcrumbItems} />
+    </div>
+    <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-6 lg:my-8">
+        <div
+            class="flex flex-col md:flex-row items-center md:items-center md:gap-8 p-4 mb-4 md:mb-8"
+        >
+            <div class="relative w-full md:w-1/3 flex justify-center">
+                <div
+                    class="absolute -top-2 -left-2 sm:-top-4 sm:-left-4
+                          w-full h-full bg-teal-700 z-0"
+                >
+                </div>
+                <img
+                    src={img}
+                    alt={title}
+                    class="relative z-10 w-full h-72 object-cover"
+                />
+            </div>
+            <div
+                class="w-full md:w-3/4 text-center md:text-left mt-4 md:mt-0 flex flex-col justify-center"
+            >
+                <h2
+                    class="text-2xl md:text-3xl lg:text-4xl font-bold font-merriweather text-corporate"
+                >
+                    {title}
+                </h2>
+                <p class="text-xl md:text-2xl lg:text-3xl mt-2 font-lora">
+                    Psicóloga Sanitaria
+                </p>
+                <p
+                    class="text-md md:text-lg lg:text-xl text-gray-500 mt-2 font-lora"
+                >
+                    {girl ? "Colegiada" : "Colegiado"}
+                    {member}
+                </p>
+                <div class="w-full mt-2">
+                    <div
+                        class="flex flex-wrap gap-4 font-serif justify-center md:justify-start"
+                    >
+                        {
+                            badges?.map((badge: string) => (
+                                <p class="text-lg md:text-xl lg:text-2xl text-targetBorder italic">
+                                    {badge}{" "}
+                                </p>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div class="mt-4 md:mt-10">
+                    <Button 
+                        href={`https://wa.me/+34664206762?text=Hola%21%20me%20gustar%C3%ADa%20concertar%20una%20cita%20con%20${encodeURIComponent(title)}`} 
+                        title="Pide cita" 
+                        newTab="true"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-start gap-8 mb-4 md:mb-8">
+            <div class="w-full md:w-3/5">
+                <AccordionTeam
+                    experiences={experience}
+                    formations={formation}
+                />
+            </div>
+            <div class="w-full md:w-2/5">
+                <h2
+                    class="text-2xl md:text-3xl font-bold text-corporate mb-4 font-merriweather"
+                >
+                    Especialidades
+                </h2>
+                <div class="flex flex-wrap gap-4 font-lora">
+                    {
+                        specialties?.map((speciality: string) => (
+                            <BadgeGreen speciality={speciality} />
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-7xl mx-auto px-4 md:px-6 lg:px-6 lg:my-8 my-8">
+        <div
+            class="border-2 border-corporate bg-green-100 rounded-lg p-6 text-center"
+        >
+            <h2
+                class="text-2xl md:text-3xl font-bold font-merriweather text-gray-700 mb-4"
+            >
+                Pide cita con Psicología Infanto-Juvenil o Adultos
+            </h2>
+            <p class="text-gray-600 font-lora mb-6">
+                Cada historia es diferente, por eso adaptamos cada intervención
+                a tus necesidades.
+            </p>
+            <Button
+                href="https://wa.me/+34664206762"
+                title="Contacta con nosotros"
+                newTab="true"
+            />
+        </div>
+    </section>
+</Layout>

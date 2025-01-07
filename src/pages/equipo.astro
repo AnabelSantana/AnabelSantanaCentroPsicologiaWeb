@@ -4,53 +4,12 @@ import CardTeam from "../components/cardTeam.astro";
 import HeroSection from "../components/heroSection.astro";
 import Layout from "../layouts/Layout.astro";
 import type { BreadcrumbItem } from "../model/types";
+import { type TeamMember } from "../data/teamData"; // IMPORTANTE
+import { cardsTeam } from "../data/teamData"; // IMPORTANTE
 
 const breadcrumbItems: BreadcrumbItem[] = [
 	{ title: "Inicio", link: "/" },
 	{ title: "Equipo" },
-];
-
-const cardsTeam = [
-	{
-		img: "images/team/cristina.webp",
-		title: "Cristina Cruz",
-		member: "M-40931",
-		badges: [
-			"Apego y trauma",
-			"Duelo",
-			"Terapia Cognitivo-Conductual",
-			"Psicología Perinatal",
-			"Ansiedad",
-			"Trastornos del Estado de Ánimo",
-		],
-	},
-	{
-		img: "images/team/siria.webp",
-		title: "Siria Shahabi",
-		member: "P-02972",
-		badges: [
-			"Apego y trauma",
-			"Ansiedad",
-			"Diversidad sexual y de género",
-			"Trastornos de personalidad",
-			"Regulación emocional",
-			"Depresión",
-		],
-	},
-	{
-		img: "images/team/lara.webp",
-		title: "Lara Martín",
-		member: "P-02494",
-		badges: [
-			"Terapia Cognitivo Conductual",
-			"Regulación emocional",
-			"Apego",
-			"Trastornos de personalidad",
-			"Trauma",
-			"Ansiedad",
-			"Estrés",
-		],
-	},
 ];
 ---
 
@@ -128,22 +87,23 @@ const cardsTeam = [
 				>!
 			</p>
 		</div>
-		<h2
+		<h3
 			class="text-2xl md:text-4xl font-semibold text-secondary my-4 md:my-8 font-lora"
 		>
 			Conoce al equipo que te acompañará en cada paso
-		</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			{
-				cardsTeam.map(({ img, title, member, badges }) => (
-					<CardTeam
-						img={img}
-						title={title}
-						member={member}
-						badges={badges}
-					/>
-				))
-			}
-		</div>
+		</h3>
+		 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{cardsTeam.map((card:TeamMember) => (
+			  <a href={`/equipo/${card.slug}`} class="block">
+				<CardTeam
+				  img={card.img}
+				  title={card.title}
+				  member={card.member}
+				  badges={card.badges}
+				  girl={card.girl}
+				/>
+			  </a>
+			))}
+		  </div>
 	</section>
 </Layout>
