@@ -107,5 +107,36 @@ export interface TeamMember {
         "Psicóloga Gabinete Psicopedagógico infanto-juvenil"
       ],
     },
+    {
+      slug: "desire-reyes",
+      img: "../images/team/desire.webp",
+      title: "Desiré Reyes Ortega",
+      member: "P-02299",
+      badges: ["Infantil", "Juvenil", "Adultos"],
+      girl: true,
+      specialties: [
+        "Apego y trauma",
+        "Terapia Cognitivo Conductual",
+        "Regulación emocional",
+        "Ansiedad",
+        "Problemas en la infancia y adolescencia",
+        "Estrés",
+        "Relaciones de pareja y dependencia emocional"
+      ],
+      formation: [
+        "Grado en Psicología (Universidad de Salamanca)",
+        "Máster en Psicología General Sanitaria (Universidad Fernando Pessoa- Canarias)",
+        "Intervención en Trauma Psicológico",
+        "Traumaterapia ( COP las palmas)",
+        "Salud mental y discapacidad (plena inclusión canaria)",
+        "Formación en Terapia familiar sistémica"
+      ],
+      experience: [
+        "Psicóloga Sanitaria en ámbito privado",
+        "Psicóloga en Servicio de intervención con personas con trastornos graves de salud mental y problemas graves de conducta",
+        "Psicóloga en Centro Asistencial El Valle",
+        "Psicóloga en centro de atención para personas con discapacidad intelectual"
+      ],
+    }
   ];
   
