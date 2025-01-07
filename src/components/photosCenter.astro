@@ -1,0 +1,135 @@
+<div x-data="{ showModal: false, modalImage: '' }">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid gap-4">
+            <div>
+                <img
+                    @click="modalImage = 'images/carousel/one.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/carousel/one.webp"
+                    alt="Sala de espera Centro de Psicología Anabel Santana"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/chair.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/chair.webp"
+                    alt="Sofa Centro de Psicología Anabel Santana"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/center/children.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/center/children.webp"
+                    alt="Servicio Infantil Centro de Psicología Anabel Santana"
+                />
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div>
+                <img
+                    @click="modalImage = 'images/center/cactus.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/center/cactus.webp"
+                    alt="Planta Centro de Psicología Anabel Santana"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/carousel/six.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/carousel/six.webp"
+                    alt="Datos cliente Centro de Psicología Anabel Santana"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/services/services.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/services/services.webp"
+                    alt="Servicios Anabel Santana"
+                />
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div>
+                <img
+                    @click="modalImage = 'images/center/team.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/center/team.webp"
+                    alt="Equipo Anabel Santana Centro de Psicología"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/charts.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/charts.webp"
+                    alt="Cuadros Centro de Psicología Anabel Santana"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/center/flowers.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/center/flowers.webp"
+                    alt="Flores Centro de Psicología Anabel Santana"
+                />
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div>
+                <img
+                    @click="modalImage = 'images/services/services.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/services/services.webp"
+                    alt="Servicios Anabel Santana"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/carousel/five.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/carousel/five.webp"
+                    alt="Despacho Anabel Santana"
+                />
+            </div>
+            <div>
+                <img
+                    @click="modalImage = 'images/center/teamChair.webp'; showModal = true"
+                    class="h-auto max-w-full rounded-lg cursor-pointer transition duration-300 transform hover:scale-105"
+                    src="images/center/teamChair.webp"
+                    alt="Equipo Anabel Santana Centro de Psicología"
+                />
+            </div>
+        </div>
+
+        
+        <!-- MODAL -->
+        <div
+            x-show="showModal"
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+        >
+            <!-- Contenedor interno para la imagen -->
+            <div class="relative max-w-3xl w-full p-20">
+                <!-- Botón de cerrar (X) -->
+                <button
+                    @click="showModal = false"
+                    class="absolute top-8 right-2 text-white text-2xl font-bold"
+                >
+                    &times;
+                </button>
+
+                <!-- Imagen ampliada -->
+                <img
+                    :src="modalImage"
+                    class="w-full h-auto mx-auto rounded-lg"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
