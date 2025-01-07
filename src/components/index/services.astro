@@ -7,6 +7,8 @@ import PcIcon from "../../assets/icons/pcIcon.astro";
 import YouthIcon from "../../assets/icons/youthIcon.astro";
 import OnSiteIcon from "../../assets/icons/onSiteIcon.astro";
 import Button from "../button.astro";
+import PsychiatryIcon from "../../assets/icons/psychiatryIcon.astro";
+import AppleIcon from "../../assets/icons/appleIcon.astro";
 ---
 
 <section
@@ -19,7 +21,7 @@ import Button from "../button.astro";
       ¿En qué podemos ayudarte?
     </h2>
     <div class="flex flex-col gap-6 md:gap-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:px-60">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:px-32">
         <div class="flex flex-col items-center">
           <div class="size-24 mb-4 text-corporate">
             <OnSiteIcon />
@@ -40,8 +42,28 @@ import Button from "../button.astro";
             Terapia online
           </p>
         </div>
+        <div class="flex flex-col items-center">
+          <div class="size-24 mb-4 text-corporate">
+            <PsychiatryIcon />
+          </div>
+          <p
+            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
+          >
+            Psiquiatría
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="size-24 mb-4 text-corporate">
+            <AppleIcon />
+          </div>
+          <p
+            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
+          >
+            Nutrición
+          </p>
+        </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
         <div class="flex flex-col items-center">
           <div class="size-24 mb-4 text-corporate">
             <ChildrenIcon />
