@@ -12,108 +12,61 @@ import AppleIcon from "../../assets/icons/appleIcon.astro";
 ---
 
 <section
-  class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-12 px-6 lg:px-16"
+  class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-12 px-6 lg:px-16" data-aos="fade-down" data-aos-duration="2000"
 >
   <div class="container mx-auto text-center">
     <h2
-      class="text-3xl lg:text-4xl font-semibold font-merriweather text-grey-700 mb-8 md:mb-12"
+      class="text-3xl lg:text-4xl font-semibold font-merriweather text-grey-700 mb-8 md:mb-12" 
     >
       ¿En qué podemos ayudarte?
     </h2>
     <div class="flex flex-col gap-6 md:gap-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:px-32">
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <OnSiteIcon />
-          </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
+        {[
+          { icon: OnSiteIcon, label: "Terapia presencial" },
+          { icon: PcIcon, label: "Terapia online" },
+          { icon: PsychiatryIcon, label: "Psiquiatría" },
+          { icon: AppleIcon, label: "Nutrición" },
+        ].map(({ icon: Icon, label }, index) => (
+          <div
+            class="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay={index * 200} 
           >
-            Terapia presencial
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <PcIcon />
+            <div class="size-24 mb-4 text-corporate">
+              <Icon />
+            </div>
+            <p
+              class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
+            >
+              {label}
+            </p>
           </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
-          >
-            Terapia online
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <PsychiatryIcon />
-          </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
-          >
-            Psiquiatría
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <AppleIcon />
-          </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
-          >
-            Nutrición
-          </p>
-        </div>
+        ))}
       </div>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <ChildrenIcon />
-          </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
+        {[
+          { icon: ChildrenIcon, label: "Infantil" },
+          { icon: YouthIcon, label: "Juvenil" },
+          { icon: AdultIcon, label: "Adulto" },
+          { icon: CoupleIcon, label: "Pareja" },
+          { icon: FamilyIcon, label: "Familia" },
+        ].map(({ icon: Icon, label }, index) => (
+          <div
+            class="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay={index * 200}
           >
-            Infantil
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <YouthIcon />
+            <div class="size-24 mb-4 text-corporate">
+              <Icon />
+            </div>
+            <p
+              class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
+            >
+              {label}
+            </p>
           </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
-          >
-            Juvenil
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 py-2 text-corporate">
-            <AdultIcon />
-          </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
-          >
-            Adulto
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <CoupleIcon />
-          </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
-          >
-            Pareja
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="size-24 mb-4 text-corporate">
-            <FamilyIcon />
-          </div>
-          <p
-            class="text-gray-700 font-merriweather text-lg md:text-xl lg:text-2xl font-medium"
-          >
-            Familia
-          </p>
-        </div>
+        ))}
       </div>
     </div>
     <div class="mt-8">
@@ -121,3 +74,4 @@ import AppleIcon from "../../assets/icons/appleIcon.astro";
     </div>
   </div>
 </section>
+
