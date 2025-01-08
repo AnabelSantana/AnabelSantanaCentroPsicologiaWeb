@@ -1,11 +1,8 @@
 ---
-// src/pages/equipo/[slug].astro
-
 import Layout from "../../layouts/Layout.astro";
 import { cardsTeam } from "../../data/teamData";
 import type { BreadcrumbItem } from "../../model/types";
 import BreadCrumb from "../../components/breadCrumb.astro";
-import Badge from "../../components/badge.astro";
 import AccordionTeam from "../../components/accordionTeam.astro";
 import BadgeGreen from "../../components/badgeGreen.astro";
 import Button from "../../components/button.astro";
@@ -14,7 +11,7 @@ const { slug } = Astro.params;
 
 const persona = cardsTeam.find((p) => p.slug === slug);
 if (!persona) {
-    throw new Error(`No se encontró ningún profesional con el slug: ${slug}`);
+    return Astro.redirect('/404');
 }
 
 const { img, title, member, position, badges, girl, specialties, formation, experience } =
