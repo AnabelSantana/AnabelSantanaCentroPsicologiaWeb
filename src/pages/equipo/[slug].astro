@@ -14,11 +14,10 @@ const { slug } = Astro.params;
 
 const persona = cardsTeam.find((p) => p.slug === slug);
 if (!persona) {
-    // Si no encontramos a nadie con ese slug, puedes hacer un throw
     throw new Error(`No se encontró ningún profesional con el slug: ${slug}`);
 }
 
-const { img, title, member, badges, girl, specialties, formation, experience } =
+const { img, title, member, position, badges, girl, specialties, formation, experience } =
     persona;
 
 const breadcrumbItems: BreadcrumbItem[] = [
@@ -60,14 +59,17 @@ const breadcrumbItems: BreadcrumbItem[] = [
                     {title}
                 </h2>
                 <p class="text-xl md:text-2xl lg:text-3xl mt-2 font-lora">
-                    Psicóloga Sanitaria
+                    {position}
                 </p>
-                <p
+                {member && (
+                    <p
                     class="text-md md:text-lg lg:text-xl text-gray-500 mt-2 font-lora"
                 >
                     {girl ? "Colegiada" : "Colegiado"}
                     {member}
                 </p>
+                  )}
+                
                 <div class="w-full mt-2">
                     <div
                         class="flex flex-wrap gap-4 font-serif justify-center md:justify-start"

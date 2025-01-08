@@ -92,13 +92,14 @@ const breadcrumbItems: BreadcrumbItem[] = [
 		>
 			Conoce al equipo que te acompañará en cada paso
 		</h3>
-		 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-4 md:mb-8">
 			{cardsTeam.map((card:TeamMember) => (
-			  <a href={`/equipo/${card.slug}`} class="block">
+			  <a href={`/equipo/${card.slug}`} class="block mx-auto md:mx-0">
 				<CardTeam
 				  img={card.img}
 				  title={card.title}
 				  member={card.member}
+				  position={card.position}
 				  badges={card.badges}
 				  girl={card.girl}
 				/>
