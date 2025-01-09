@@ -1,3 +1,8 @@
+export interface Experience {
+  main: string;
+  details?: string[];
+}
+
 export interface TeamMember {
     slug: string;
     img: string;
@@ -8,7 +13,7 @@ export interface TeamMember {
     girl: boolean;
     specialties: string[];
     formation: string[];
-    experience: string[];
+    experience: (string | Experience)[];
   }
   
   export const cardsTeam: TeamMember[] = [
@@ -256,6 +261,56 @@ export interface TeamMember {
         "Residente de Psiquiatría rotación externa en la Unidad de Esquizofrenia y Unidad de Trastornos Afectivos.",
         "Residente de Psiquiatría de Interconsulta y Psicología de Enlace.",
         "Residente de Psiquiatría en Hospital Clínico de Valencia en Unidad de primeros episodios psicóticos."
+      ],
+    },
+    {
+      slug: "raquel-sanchez",
+      img: "../images/team/raquel.webp",
+      title: "Raquel Sánchez",
+      member: "IC-00080",
+      position: "Dietista Nutricionista",
+      badges: ["Infantil", "Juvenil", "Adultos"],
+      girl: true,
+      specialties: [
+        "Educación Nutricional",
+        "Dietoterapia a lo largo de la vida",
+        "Tratamiento de patologías, alergias e intolerancias",
+        "Mejora de la composición corporal",
+        "Planificaciones familiares",
+        "Restauración colectiva"
+      ],
+      formation: [
+        "Técnico Superior en Dietética (IES Primero de Mayo)",
+        "Grado en Nutrición Humana y Dietética (Universidad Isabel I)",
+        "Máster en Calidad, Higiene y Seguridad Alimentaria (IMF)",
+        "Master Universitario en Formación del Profesorado de Educación Secundaria Obligatoria y Bachillerato, Formación Profesional y Enseñanzas de Idiomas (Universidad Isabel I)",
+        "Docencia de la Formación Profesional para el Empleo (Focan)",
+        "Curso en Microbiología Alimentaria para No Microbiólogos (AENOR)",
+        "Experto en Entrevista Motivacional (Norte Salud)",
+        "Curso Avanzado en Obesidad (ICNS)",
+        "Nutrición Deportiva Avanzada (ICNS)",
+        "Alimentación en síndrome de intestino irritable (Norte Salud)",
+        "Curso “TCA y Obesidad: Una perspectiva multidisciplinar” (CODiNuCoVa)"
+      ],
+      experience: [
+        {
+          main: "Dietista-Nutricionista realizando las tareas propias del puesto en consulta.",
+          details: [
+            "Educación alimentaria.",
+            "Nutrición clínica.",
+            "Restauración colectiva."
+          ]
+        },
+        {
+          main: "Dietista-Nutricionista realizando las tareas propias del puesto en empresa de catering.",
+          details: [
+            "Elaboración y validación de menús adaptados a las necesidades del usuario y del servicio.",
+            "Adecuación, elaboración y verificación de fichas técnicas de platos.",
+            "Control de alérgenos y buenas prácticas de manipulación.",
+            "Formación a trabajadores y clientes en nutrición o/y buenas prácticas de manipulación.",
+            "Coordinación de equipos de trabajo."
+          ]
+        }
       ],
     }
   ];

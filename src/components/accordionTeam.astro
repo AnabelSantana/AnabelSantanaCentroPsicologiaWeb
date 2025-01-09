@@ -40,11 +40,24 @@ const { formations = [], experiences = [] } = Astro.props;
     >
         <div class="p-5 border-2 border-b-0 border-targetBorder">
             <ul class="list-disc pl-5 space-y-2 font-lora">
-                {
-                    experiences?.map((experience: string) => (
-                        <li>{experience}</li>
-                    ))
-                }
+                {experiences.map((experience: any) => {
+                    if (typeof experience === "string") {
+                        return <li>{experience}</li>;
+                    } else {
+                        return (
+                            <li>
+                                {experience.main}
+                                {experience.details && (
+                                    <ul class="list-[square] pl-5 space-y-1">
+                                        {experience.details.map((detail:any) => (
+                                            <li >{detail}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        );
+                    }
+                })}
             </ul>
         </div>
     </div>
