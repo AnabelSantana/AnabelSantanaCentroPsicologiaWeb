@@ -267,7 +267,7 @@ export interface TeamMember {
       slug: "raquel-sanchez",
       img: "../images/team/raquel.webp",
       title: "Raquel Sánchez",
-      member: "IC-00080",
+      member: null,
       position: "Dietista Nutricionista",
       badges: ["Infantil", "Juvenil", "Adultos"],
       girl: true,
@@ -314,4 +314,3 @@ export interface TeamMember {
       ],
     }
   ];
-  
