@@ -13,7 +13,7 @@ const {
 <div class="relative">
 
   <div
-    class="w-80 md:w-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 hover:shadow-corporate
+    class="w-80 md:w-auto max-w-sm  bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 hover:shadow-corporate
            transform transition-transform duration-300 hover:scale-105"
   >
       <img
@@ -28,11 +28,14 @@ const {
         {title}
       </h3>
       {member ? (
-        <p class="mb-3 text-base md:text-lg text-gray-500 font-lora">
+        <p class="text-lg md:text-xl text-gray-600 font-lora font-semibold">
+          {position}
+        </p>
+        <p class="mb-3 text-base md:text-lg text-gray-500 font-lora font-extralight">
           {girl ? "Colegiada" : "Colegiado"} {member}
         </p>
       ) : (
-        <p class="mb-3 text-base md:text-lg text-gray-500 font-lora">
+        <p class="mb-10 text-lg md:text-xl text-gray-600 font-lora font-semibold">
           {position}
         </p>
       )}
