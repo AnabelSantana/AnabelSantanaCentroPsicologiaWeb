@@ -4,22 +4,24 @@ import CommentsIcon from "../../assets/icons/commentsIcon.astro";
 import UsersIcon from "../../assets/icons/usersIcon.astro";
 import Button from "../button.astro";
 
-const { photo, altPhoto, title, description, textButton, isFree } = Astro.props;
+const { photo, altPhoto, title, description, textButton, isFree, isPsychiatrist } = Astro.props;
 ---
 
 <div class="max-w-sm bg-white rounded-lg shadow-xl">
     <img class="rounded-t-lg" src={photo} alt={altPhoto} />
     <div class="p-5">
         <h5
-            class={`text-6xl font-lora font-semibold tracking-tight text-gray-700 text-center ${
+            class={`font-lora font-semibold tracking-tight text-gray-700 text-center ${
                 isFree ? "mb-10" : "mb-2"
-            }`}
+            } ${isPsychiatrist ? "text-4xl" : "text-6xl"}`}
         >
-            {title}{!isFree && <span class="text-2xl font-light">€</span>}
+            {title}{!isFree && !isPsychiatrist && <span class="text-2xl font-light">€</span>}
         </h5>
-        <p class="mb-4 text-gray-700 font-lora text-xl text-center">{description}</p>
+        {description && (
+            <p class="mb-4 text-gray-700 font-lora text-xl text-center">{description}</p>
+        )}
         {
-            !isFree && (
+            !isFree && !isPsychiatrist && (
                 <div class="flex flex-col gap-2 mb-4">
                     <div class="flex items-center justify-center gap-2 text-gray-700">
                         <div class="text-corporate size-6">
@@ -40,6 +42,40 @@ const { photo, altPhoto, title, description, textButton, isFree } = Astro.props;
                         <span class="text-base md:text-lg font-lora">Presencial u online</span>
                     </div>
                 </div>
+            )
+        }
+        {
+            !isFree && isPsychiatrist && (
+            <div class="flex flex-col gap-2 my-4">
+            <div class="flex items-center justify-center gap-2 text-gray-700">
+                <div class="text-corporate size-6">
+                    <ClockIcon />
+                </div>
+                <span class="text-base md:text-lg font-lora -ml-1">45 minutos</span>
+                <div class="text-corporate size-6">
+                  <UsersIcon />
+              </div>
+              <span class="text-base md:text-lg font-lora -ml-1">Adultos</span>
+              <!-- <div class="text-corporate size-6">
+                    <CommentsIcon />
+                </div>
+                <span class="text-base md:text-lg font-lora -ml-1">Presencial</span> -->
+            </div>
+            <div class="flex items-end justify-center gap-3 text-gray-700">
+              <div class="text-corporate size-6">
+                <CommentsIcon />
+            </div>
+            <span class="text-base md:text-lg font-lora -ml-1">Presencial</span>
+            </div>
+            <div class="flex items-end justify-center gap-3 text-gray-700">
+              <p class="text-4xl font-lora font-semibold tracking-tight text-gray-700">100<span class="text-2xl font-normal">€</span></p>
+              <span class="text-gray-700 font-lora text-xl">Primera sesión</span>
+            </div>
+            <div class="flex items-end justify-center gap-3 text-gray-700 -mt-2">
+              <p class="text-4xl font-lora font-semibold tracking-tight text-gray-700">80<span class="text-2xl font-normal">€</span></p>
+              <span class="text-gray-700 font-lora text-xl">Seguimiento</span>
+            </div>
+        </div>
             )
         }
         <div class="flex justify-center">

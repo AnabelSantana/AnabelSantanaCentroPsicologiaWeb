@@ -1,4 +1,9 @@
 ---
+import { fade } from "astro:transitions";
+import ClockIcon from "../../assets/icons/clockIcon.astro";
+import CommentsIcon from "../../assets/icons/commentsIcon.astro";
+import UsersIcon from "../../assets/icons/usersIcon.astro";
+import Button from "../button.astro";
 import Card from "./card.astro";
 
 const cards = [
@@ -9,6 +14,7 @@ const cards = [
     description: "Consultar mi caso o aclarar dudas",
     textButton: "Contacto",
     isFree: true,
+    isPsychiatrist: false
   },
   {
     photo: "/images/chair.webp",
@@ -17,11 +23,25 @@ const cards = [
     description: "Comenzar mi proceso terapéutico",
     textButton: "Sesión individual",
     isFree: false,
+    isPsychiatrist: false
+  },
+  {
+    photo: "/images/psychiatrist.webp",
+    altPhoto: "Psiquiatra",
+    title: "Psiquiatría",
+    description: null,
+    textButton: "Pide cita",
+    isFree: false,
+    isPsychiatrist: true
   },
 ];
 ---
 
-<section class="max-w-7xl mx-auto py-12 px-6 lg:px-16" data-aos="fade-down" data-aos-duration="2000">
+<section
+  class="max-w-7xl mx-auto py-12 px-6 lg:px-16"
+  data-aos="fade-down"
+  data-aos-duration="2000"
+>
   <div class="container mx-auto text-center">
     <h2
       class="text-3xl lg:text-4xl font-semibold font-merriweather text-corporate mb-8 md:mb-12"
@@ -29,7 +49,7 @@ const cards = [
       ¿Qué necesitas?
     </h2>
   </div>
-  <div class="container mx-auto flex flex-wrap justify-center gap-12">
+  <div class="flex flex-col items-center gap-6 lg:flex-row lg:justify-center">
     {
       cards.map((card, index) => (
         <div class="flex items-center justify-center">
@@ -41,10 +61,10 @@ const cards = [
             description={card.description}
             isFree={card.isFree}
             textButton={card.textButton}
+            isPsychiatrist={card.isPsychiatrist}
           />
         </div>
       ))
     }
   </div>
 </section>
-
