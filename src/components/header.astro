@@ -9,14 +9,26 @@ const currentPath = Astro.url.pathname;
     <div
         class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4"
     >
-        <!-- Logo -->
-        <a href="/" class="flex items-center">
-            <img
-                src="/images/logo.webp"
-                alt="Logo Anabel Santana Centro Psicología"
-                class="inline w-64 md:w-80"
-            />
-        </a>
+        <div class="flex items-center gap-4">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img
+                    src="/images/logo.webp"
+                    alt="Logo Anabel Santana Centro Psicología"
+                    class="inline w-12 md:w-16"
+                />
+            </a>
+
+            <!-- Texto al lado del logo -->
+            <div class="flex flex-col leading-tight">
+                <span class="text-lg font-bold text-gray-800">
+                    Clínicas Anabel Santana
+                </span>
+                <span class="text-sm text-gray-600 -mt-1">
+                    Centro de Psicología
+                </span>
+            </div>
+        </div>
 
         <!-- Botón Toggle para móviles -->
         <button

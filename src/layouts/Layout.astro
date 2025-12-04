@@ -1,6 +1,6 @@
 ---
 import Footer from "../components/footer.astro";
-import Header from "../components/header.astro";	
+import Header from "../components/header.astro";
 
 interface Props {
 	title: string;
@@ -22,15 +22,18 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name='description' content={description} />
-		<link rel="icon" type="image/svg+xml" href="/faviconCentro.svg" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
 		/>
-		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+		<script
+			is:inline
+			src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+		></script>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
 			rel="stylesheet"
@@ -46,13 +49,12 @@ const {
 		></script>
 		<script>
 			import AOS from "aos";
-		  
+
 			AOS.init({
-			  duration: 800,
-			  once: true,
+				duration: 800,
+				once: true,
 			});
-		  </script>
-		  
+		</script>
 	</body>
 </html>
 
